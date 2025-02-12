@@ -1,0 +1,26 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Product {
+  id: ID!
+  name: String!
+  price: Float!
+  description: String!
+}
+
+type Query {
+  product(id: ID!): Product
+  products: [Product!]!
+}
+
+type Mutation {
+  addProduct(name: String!, price: Float!, description: String): Product!
+  updateProduct(id: ID!, name: String, price: Float, description: String): Product
+  deleteProduct(id: ID!): Boolean!
+}
+
+type Subscription {
+  productAdded: Product!
+}
+
